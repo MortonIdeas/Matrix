@@ -14,7 +14,7 @@ Matrix::Matrix()
 			macierz[i][j] = 0.0;
 		}
 	}
-	//cout << "Stworzylem macierz domyslna o row: " << rows << "columns: " << columns << endl;
+
 }
 Matrix::Matrix(unsigned int p_rows, unsigned int p_columns) :rows(p_rows), columns(p_columns)
 {
@@ -29,7 +29,7 @@ Matrix::Matrix(unsigned int p_rows, unsigned int p_columns) :rows(p_rows), colum
 		}
 	}
 
-	//cout << "Stworzylem macierz parametryczny  o row: " << rows << "columns: " << columns << endl;
+
 }
 void Matrix::wypelnij()
 {
@@ -89,7 +89,7 @@ double Matrix::det()
 		{
 			determinant = macierz[0][0] * macierz[1][1] - macierz[0][1] * macierz[1][0];
 		}
-		else//Gdy rozmiar macierzy jest wiekszy niz 2 trzeba zastosowaæ laplace'a
+		else//Gdy rozmiar maciezy jest wieksza niz 2 trzeba zastosowaæ laplaca
 		{
 			for (int j = 0; j < columns; j++)
 			{
@@ -124,7 +124,6 @@ double Matrix::det()
 
 Matrix::~Matrix()
 {
-	//Zwalnianie pamieci dla macierzy dwuwymiarowej
 	for (int i = 0; i < rows; i++)
 		delete[] macierz[i];
 }
